@@ -2,65 +2,78 @@
 <html>
   <head>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>୧⍤⃝🥯</title>
+	<title>୧⍤⃝</title>
  <style>
- input{
-   width:150px;
-   height:30px;
-   color:white;
-   background-color:black;
+ body{
+   margin-left:0px;
+   margin-right:0px;
+   color: #333;
+   background-color: #fff;
+   transition: all 0.5s ease-out;
    }
- button {
-   width:60px;
-   height:40px;
-   color:white;
-   background-color:black;
+ .night-mode {
+   color: #fff;
+   background-color: #333;
    }
- center{
-   margin-top:120px;
+ marquee{
+   font-size:35px;
    }
- #a{
+ button{
+   width:100px;
+   height:50px;
+   }
+ #mode-switch{
    margin-top:20px;
    }
  </style>
   </head>
   <body>	
   <center>
-  <h1>输入内容×3</h1>
-  <hr/>
-  <input id="s" type="text" placeholder="请输入数字..."/>
+  <h1>DX</h1>
+  <marquee>DX</marquee>
+  <h2>外号：happy little dog</h2>
+  <h2>QQ昵称：伍零壹贰</h2>
+  <h2>微信昵称：DX.</h2>
+  <h2>QQ头像如下：</h2>
+  <img src=""/>
   <br>
-	<button id ="a" onclick="a()">运行</button>
- <br>
- <h6>注：本网页仅支持输入数字。</h6>
- <hr/>
- <button id = "y" onclick="y()">满意</button>
- <button id = "m" onclick="m()">不满意</button>
- <br>
- <a href="index.html">刷新</a>
- </center>
- <script>
- function a(){
-     let q = document.getElementById("s").value;
- if(onclick="a()"){
-   let w = parseInt(q)*3
-   alert("输出结果为:"+w)
+  <button id="tz" onclick="tz()">随机生成体重</button>
+  <br>
+  <button id="mode-switch">模式切换</button>
+  </center>
+  <script>
+    let qq = 3555643521
+    let tx = document.querySelector("img")
+    tx.src = "http://q2.qlogo.cn/headimg_dl?dst_uin="+qq+"&spec=100"
+    let s = document.createElement("script")
+    s.src = "http://users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins="+qq
+    document.body.appendChild(s)
+    function portraitCallBack(e){
+        let h2 = document.querySelecotor("h2")
+        h2.innerText = e[qq][6]
+        }
+      let pass = ""
+    for(let i = 0; i < 2; i++){
+    pass += Math.round(Math.random()*9)
+    }
+    var modeSwitch = document.getElementById('mode-switch');
+    var body = document.body;
+    function toggleMode() {
+      body.classList.toggle('night-mode');
+      if (body.classList.contains('night-mode')) {
+        modeSwitch.textContent = 'Day Mode';
+      } else {
+        modeSwitch.textContent = 'Night Mode';
+      }
+    }
+    modeSwitch.addEventListener('click', toggleMode);
+  </script>
+  <script>
+  function tz(){
+  if(onclick="tz()"){
+  alert("TA的体重为"+pass+"公斤");
   }
-}
- </script>
- <script>
- function y(){
- if(onclick="y()"){
-   alert("谢谢您对我们的支持！")
-   }
- }
- </script>
- <script>
- function m(){
-     if(onclick="m()"){
-       alert("对不起我们会做得更好的！")
-       }
-     }
- </script>
+  }
+  </script>
   </body>
-  </html>
+</html>
